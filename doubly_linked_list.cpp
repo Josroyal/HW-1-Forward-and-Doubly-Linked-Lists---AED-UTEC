@@ -110,6 +110,9 @@ public:
             Node<T>* temp = head;
             for(int i=0; i< pos-1; i++){
                 temp = temp->next;
+                if (temp == NULL){
+              throw out_of_range("Fuera de rango.");
+            }
             }
             nodo->next = temp->next;
             nodo->prev = temp;
@@ -126,6 +129,9 @@ public:
             Node<T>* temp = head;
             for(int i=0; i< pos-1; i++){
                 temp = temp->next;
+                if (temp == NULL){
+              throw out_of_range("Fuera de rango.");
+            }
             }
             Node<T>* removed = temp->next;
             temp->next = temp->next->next;
@@ -182,6 +188,12 @@ public:
 
     void clear(){
         Node<T> *temp = head;
+        Node<T> *deleted = head;
+        while (temp != nullptr){
+            Node<T> *deleted = temp;
+            delete deleted;
+            temp = temp->next;
+        }
     }
 
     void reverse() {
