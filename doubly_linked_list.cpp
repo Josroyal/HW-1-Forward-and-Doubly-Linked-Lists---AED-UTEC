@@ -38,7 +38,6 @@ public:
 
     void push_front(T t){
         Node<T> *nodo = new Node<T>(t);
-        //nodo->data = t;
 
         if (head == NULL){
             head = nodo;
@@ -54,7 +53,6 @@ public:
 
     void push_back(T t){
         Node<T> *nodo = new Node<T>(t);
-        //nodo->data = t;
 
         if (head == NULL){
             head = nodo;
@@ -191,8 +189,8 @@ public:
         Node<T> *deleted = head;
         while (temp != nullptr){
             Node<T> *deleted = temp;
-            delete deleted;
             temp = temp->next;
+            delete deleted;
         }
     }
 
